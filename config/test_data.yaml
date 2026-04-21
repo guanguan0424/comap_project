@@ -1,0 +1,67 @@
+# 测试数据配置
+# 支持多环境数据分离和动态替换
+users:
+  # 管理员用户
+  admin:
+    username: "admin@example.com"
+    password: "${ADMIN_PASSWORD:-admin123}"
+    role: "admin"
+  
+  # 普通用户
+  normal_user:
+    username: "user@example.com" 
+    password: "${USER_PASSWORD:-user123}"
+    role: "user"
+  
+  # 受限用户
+  restricted_user:
+    username: "restricted@example.com"
+    password: "${RESTRICTED_PASSWORD:-restricted123}"
+    role: "restricted"
+
+# 业务数据样例
+products:
+  valid_product:
+    name: "测试产品"
+    description: "这是一个测试产品的描述"
+    price: 99.99
+    stock: 100
+  
+  invalid_product:
+    name: ""
+    description: ""
+    price: -1
+    stock: -1
+
+# API请求样板数据
+api_templates:
+  login_request:
+    username: "${TEST_USERNAME:-default@example.com}"
+    password: "${TEST_PASSWORD:-password123}"
+  
+  create_user_request:
+    email: "newuser@example.com"
+    name: "新用户"
+    password: "newpass123"
+    role: "user"
+
+# UI测试数据
+ui_test_data:
+  login_form:
+    valid_credentials:
+      username: "lp@savehmi.com"
+      password: "123456"
+    invalid_credentials:
+      username: "wrong@example.com"
+      password: "wrongpassword"
+    empty_credentials:
+      username: ""
+      password: ""
+    incorrect_credentials:
+      username: "lp@savehmi.com"
+      password: "wrongpass"
+    
+  
+  search_terms:
+    valid: ["测试", "product", "123"]
+    invalid: ["", "   ", "###"]

@@ -1,0 +1,4 @@
+api_base_url: "http://risemap-dev.savehmi.cn/api/system/v1"
+ui_base_url: "http://risemap-dev.savehmi.cn"
+login_url: "http://risemap-dev.savehmi.cn/base/customers"
+
