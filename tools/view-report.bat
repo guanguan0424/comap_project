@@ -1,5 +1,5 @@
 @echo off
-cd /d "%~dp0..\allure-report"
+cd /d "%~dp0.."
 
 REM Check if port 8080 is available
 netstat -ano | findstr ":8080" >nul
